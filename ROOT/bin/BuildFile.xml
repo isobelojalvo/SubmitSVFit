@@ -10,10 +10,15 @@
 <use   name="HTT-utilities/RecoilCorrections"/>
 
 <!--<use   name="roottmva"/>0-->
-
+<bin   name="FastMTTStandAlonePUATauDM" file="FastMTTStandAlonePUATauDM.cc">
+</bin>
+<!--
+<bin   name="SVFitStandAlonePUATauDM" file="SVFitStandAlonePUATauDM.cc">
+</bin>
 
 <bin   name="SVFitStandAloneFSATauDM" file="SVFitStandAloneFSATauDM.cc">
 </bin>
+-->
 <!--
 <bin   name="SVFitStandAloneFSAZH" file="SVFitStandAloneFSAZH.cc">
 </bin>
