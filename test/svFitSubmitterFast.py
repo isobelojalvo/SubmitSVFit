@@ -103,15 +103,16 @@ def main(argv=None):
     bashScript = "#!/bin/bash\n value=$(<$INPUT)\n echo \"$value\"\n"
     bashScript += '$CMSSW_BASE/bin/$SCRAM_ARCH/FastMTTStandAlonePUATauDM newOutputFile=1 inputfile=$value newFile=\'$OUTPUT\'' #% (channel, sample_name, period)
     if args.recoilType : recoilType = "recoilType="+args.recoilType
-    else : recoilType = ''
+    else : recoilType = '2'
     if args.doES : doES = "doES="+args.doES
-    else : doES = ''
+    else : doES = '1'
     if args.isWJets : isWJets = "isWJets="+args.isWJets
-    else : isWJets = ''
+    else : isWJets = '0'
     if args.metType : metType = "metType="+args.metType
-    else : metType = ''
+    else : metType = '-1'
     bashScript += ' %s %s %s %s' % (recoilType, doES, isWJets, metType)
     bashScript += '\n'
+    print bashScript
     with open(bash_name,'w') as file:
         file.write(bashScript)
     os.system('chmod +x %s' % bash_name)
